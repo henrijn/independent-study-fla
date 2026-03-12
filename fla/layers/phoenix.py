@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import math
+import warnings
 from typing import TYPE_CHECKING, Optional, Tuple
 
 import torch
@@ -13,7 +14,8 @@ from fla.modules import RMSNorm, ShortConvolution
 from fla.modules.feature_map import (ReLUFeatureMap, SwishFeatureMap,
                                      T2RFeatureMap)
 from fla.ops.gsa import chunk_gsa, fused_recurrent_gsa
-from fla.utils import get_unpad_data, index_first_axis, pad_input, rms_norm_linear
+from fla.modules.layernorm import rms_norm_linear
+from fla.layers.utils import get_unpad_data, index_first_axis, pad_input
 
 if TYPE_CHECKING:
     from fla.models.utils import Cache

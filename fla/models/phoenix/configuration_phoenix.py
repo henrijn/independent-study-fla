@@ -1,8 +1,7 @@
-
 import warnings
 
 from transformers.configuration_utils import PretrainedConfig
-
+from typing import Optional
 
 class PhoenixConfig(PretrainedConfig):
 
